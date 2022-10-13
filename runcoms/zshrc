@@ -11,3 +11,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+## Script integration for vscode projects
+if [[ -n $ZSH_INIT_COMMAND ]]; then
+    echo "Running: $ZSH_INIT_COMMAND"
+    eval "$ZSH_INIT_COMMAND"
+fi
+
+## 'dotfiles' repo: https://www.atlassian.com/git/tutorials/dotfiles
+DOTFILESREPO=${HOME}/.dotfiles.git
+alias dfgit='/usr/bin/git --git-dir=$DOTFILESREPO/ --work-tree=$HOME'
