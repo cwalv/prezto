@@ -12,7 +12,7 @@ fi
 
 # Customize to your needs...
 
-## Script integration for vscode projects
+## Script integration w/ various projects/shell envs
 if [[ -n $ZSH_INIT_COMMAND ]]; then
     echo "Running: $ZSH_INIT_COMMAND"
     eval "$ZSH_INIT_COMMAND"
@@ -21,3 +21,8 @@ fi
 ## 'dotfiles' repo: https://www.atlassian.com/git/tutorials/dotfiles
 DOTFILESREPO=${HOME}/.dotfiles.git
 alias dfgit='/usr/bin/git --git-dir=$DOTFILESREPO/ --work-tree=$HOME'
+
+# set XDG
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=${HOME}/.config}"
+XDG_CACHE_HOME="${XDG_CACHE_HOME:=${HOME}/.cache}"
+XDG_DATA_HOME="${XDG_DATA_HOME:=${HOME}/.local/share}"
