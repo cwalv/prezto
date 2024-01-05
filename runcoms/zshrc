@@ -26,3 +26,17 @@ alias dfgit='/usr/bin/git --git-dir=$DOTFILESREPO/ --work-tree=$HOME'
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=${HOME}/.config}"
 XDG_CACHE_HOME="${XDG_CACHE_HOME:=${HOME}/.cache}"
 XDG_DATA_HOME="${XDG_DATA_HOME:=${HOME}/.local/share}"
+
+## Facebook
+
+# Load Facebook stuff (don't remove this line).
+source /usr/facebook/ops/rc/master.zshrc
+
+# Java/proxy proxy stuffs
+http_proxy="fwdproxy:8080"
+https_proxy="fwdproxy:8080"
+no_proxy=".fbcdn.net,.facebook.com,.thefacebook.com,.tfbnw.net,.fb.com,.fburl.com,.facebook.net,.sb.fbsbx.com,localhost"
+JAVA_TOOL_OPTIONS="-Xmx8192m -Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true -Dhttp.proxyHost=fwdproxy -Dhttp.proxyPort=8080 -Dhttps.proxyHost=fwdproxy -Dhttps.proxyPort=8080 -Dhttp.nonProxyHosts=*.fbcdn.net|*.facebook.com|*.thefacebook.com|*.tfbnw.net|*.fb.com|*.fburl.com|*.facebook.net|*.sb.fbsbx.com|localhost"
+
+# XStream
+alias xstream='xstream-rs'
