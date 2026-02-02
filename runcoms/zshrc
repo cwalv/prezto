@@ -26,3 +26,15 @@ alias dfgit='/usr/bin/git --git-dir=$DOTFILESREPO/ --work-tree=$HOME'
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=${HOME}/.config}"
 XDG_CACHE_HOME="${XDG_CACHE_HOME:=${HOME}/.cache}"
 XDG_DATA_HOME="${XDG_DATA_HOME:=${HOME}/.local/share}"
+
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvmexport 
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# Warn against using old docker-compose (use 'docker compose' instead)
+docker-compose() {
+  echo "Use 'docker compose' (with space) instead" >&2
+  return 1
+}
